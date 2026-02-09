@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration - Classroom Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/register.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-content">
+          <h1><i class="fas fa-user-plus"></i> Student Registration</h1>
+          <p>Register new students and manage enrollment information</p>
+        </div>
+        <div class="header-actions">
+          <button class="action-btn" id="viewAllStudents">
+            <i class="fas fa-users"></i> View All Students
+          </button>
+          <button class="action-btn primary" id="bulkRegister">
+            <i class="fas fa-file-import"></i> Bulk Register
+          </button>
+        </div>
+      </header>
+
+      <!-- Sidebar Navigation -->
+      <nav class="sidebar">
+        <div class="logo">
+          <h2><i class="fas fa-user-graduate"></i> EduManage Pro</h2>
+        </div>
+        <div class="nav-menu">
+          <a href="index.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+          <a href="dashboard.html" class="nav-item">
+            <i class="fas fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="studentRecordsManagement.html" class="nav-item">
+            <i class="fas fa-users"></i>
+            <span>Students</span>
+          </a>
+          <a href="attendance.html" class="nav-item">
+            <i class="fas fa-calendar-check"></i>
+            <span>Attendance</span>
+          </a>
+          <a href="reports.html" class="nav-item">
+            <i class="fas fa-file-alt"></i>
+            <span>Reports</span>
+          </a>
+          <a href="register.html" class="nav-item active">
+            <i class="fas fa-user-plus"></i>
+            <span>Register</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Registration Form -->
+        <section class="section-card">
+          <h2 class="section-title">
+            <i class="fas fa-edit"></i> New Student Registration
+          </h2>
+          <form id="registrationForm" class="registration-form">
+            <div class="controls-grid">
+              <!-- Personal Information -->
+              <div class="control-group">
+                <label class="control-label">
+                  <i class="fas fa-user"></i> First Name *
+                </label>
+                <input
+                  type="text"
+                  class="control-select"
+                  placeholder="Enter first name"
+                  required
+                />
+              </div>
+              <div class="control-group">
+                <label class="control-label">
+                  <i class="fas fa-user"></i> Last Name *
+                </label>
+                <input
+                  type="text"
+                  class="control-select"
+                  placeholder="Enter last name"
+                  required
+                />
+              </div>
+              <div class="control-group">
+                <label class="control-label">
+                  <i class="fas fa-calendar"></i> Date of Birth *
+                </label>
+                <input type="date" class="control-select" required />
+              </div>
+
+              <!-- Contact Information -->
+              <div class="control-group">
+                <label class="control-label">
+                  <i class="fas fa-envelope"></i> Email Address
+                </label>
+                <input
+                  type="email"
+                  class="control-select"
+                  placeholder="student@school.edu"
+                />
+              </div>
+              <div class="control-group">
+                <label class="control-label">
+                  <i class="fas fa-phone"></i> Phone Number
+                </label>
+                <input
+                  type="tel"
+                  class="control-select"
+                  placeholder="(555) 123-4567"
+                />
+              </div>
+              <div class="control-group">
+                <label class="control-label">
+                  <i class="fas fa-home"></i> Address
+                </label>
+                <input
+                  type="text"
+                  class="control-select"
+                  placeholder="Enter address"
+                />
+              </div>
+
+              <!-- Academic Information -->
+              <div class="control-group">
+                <label class="control-label">
+                  <i class="fas fa-graduation-cap"></i> Grade Level *
+                </label>
+                <select class="control-select" required>
+                  <option value="">Select Grade</option>
+                  <option value="9">Grade 9</option>
+                  <option value="10">Grade 10</option>
+                  <option value="11">Grade 11</option>
+                  <option value="12">Grade 12</option>
+                </select>
+              </div>
+              <div class="control-group">
+                <label class="control-label">
+                  <i class="fas fa-users"></i> Section *
+                </label>
+                <select class="control-select" required>
+                  <option value="">Select Section</option>
+                  <option value="A">Section A</option>
+                  <option value="B">Section B</option>
+                  <option value="C">Section C</option>
+                  <option value="D">Section D</option>
+                </select>
+              </div>
+              <div class="control-group">
+                <label class="control-label">
+                  <i class="fas fa-id-card"></i> Student ID
+                </label>
+                <input
+                  type="text"
+                  class="control-select"
+                  placeholder="Auto-generated"
+                  readonly
+                />
+              </div>
+
+              <!-- Guardian Information -->
+              <div class="control-group">
+                <label class="control-label">
+                  <i class="fas fa-user-friends"></i> Guardian Name
+                </label>
+                <input
+                  type="text"
+                  class="control-select"
+                  placeholder="Parent/Guardian name"
+                />
+              </div>
+              <div class="control-group">
+                <label class="control-label">
+                  <i class="fas fa-envelope"></i> Guardian Email
+                </label>
+                <input
+                  type="email"
+                  class="control-select"
+                  placeholder="guardian@email.com"
+                />
+              </div>
+              <div class="control-group">
+                <label class="control-label">
+                  <i class="fas fa-phone"></i> Guardian Phone
+                </label>
+                <input
+                  type="tel"
+                  class="control-select"
+                  placeholder="(555) 987-6543"
+                />
+              </div>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="control-group mt-3">
+              <label class="control-label">
+                <i class="fas fa-sticky-note"></i> Additional Notes
+              </label>
+              <textarea
+                class="control-select"
+                rows="3"
+                placeholder="Any additional information about the student..."
+              ></textarea>
+            </div>
+
+            <!-- Form Actions -->
+            <div class="button-group mt-3">
+              <button type="submit" class="primary-btn">
+                <i class="fas fa-save"></i> Register Student
+              </button>
+              <button type="reset" class="action-btn">
+                <i class="fas fa-redo"></i> Clear Form
+              </button>
+              <button type="button" class="action-btn">
+                <i class="fas fa-upload"></i> Upload Photo
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Recently Registered -->
+        <section class="section-card">
+          <h2 class="section-title">
+            <i class="fas fa-history"></i> Recently Registered
+          </h2>
+          <div class="attendance-table-container">
+            <div class="table-header">
+              <div class="table-title">
+                <i class="fas fa-list"></i> Recent Registrations
+                <span class="table-subtitle">Last 7 days</span>
+              </div>
+              <div class="table-actions">
+                <div class="table-search">
+                  <i class="fas fa-search"></i>
+                  <input type="text" placeholder="Search students..." />
+                </div>
+              </div>
+            </div>
+
+            <div class="table-wrapper">
+              <table class="attendance-table">
+                <thead>
+                  <tr>
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Grade & Section</th>
+                    <th>Date Registered</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>S2023120</strong></td>
+                    <td>
+                      <div class="student-info">
+                        <div class="student-avatar">AJ</div>
+                        <div class="student-details">
+                          <h4>Alex Johnson</h4>
+                          <p>alex.j@school.edu</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Grade 11 - B</td>
+                    <td>Today, 10:30 AM</td>
+                    <td>
+                      <span class="student-status status-active">Active</span>
+                    </td>
+                    <td>
+                      <div class="action-buttons">
+                        <button class="action-icon">
+                          <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="action-icon">
+                          <i class="fas fa-print"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>S2023119</strong></td>
+                    <td>
+                      <div class="student-info">
+                        <div class="student-avatar">SR</div>
+                        <div class="student-details">
+                          <h4>Sophia Rodriguez</h4>
+                          <p>sophia.r@school.edu</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Grade 10 - A</td>
+                    <td>Yesterday, 2:15 PM</td>
+                    <td>
+                      <span class="student-status status-active">Active</span>
+                    </td>
+                    <td>
+                      <div class="action-buttons">
+                        <button class="action-icon">
+                          <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="action-icon">
+                          <i class="fas fa-print"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>S2023118</strong></td>
+                    <td>
+                      <div class="student-info">
+                        <div class="student-avatar">TK</div>
+                        <div class="student-details">
+                          <h4>Thomas Kim</h4>
+                          <p>thomas.k@school.edu</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Grade 12 - C</td>
+                    <td>Nov 25, 2023</td>
+                    <td>
+                      <span class="student-status status-active">Active</span>
+                    </td>
+                    <td>
+                      <div class="action-buttons">
+                        <button class="action-icon">
+                          <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="action-icon">
+                          <i class="fas fa-print"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Multimedia Section -->
+       <!-- Multimedia Section - No Images Required -->
+<section class="multimedia-section">
+    <h2 class="section-title"><i class="fas fa-user-check"></i> Registration Process</h2>
+    
+    <div class="media-alternative">
+        <div class="media-item">
+            <div class="media-icon">
+                <i class="fas fa-user-plus"></i>
+            </div>
+            <h3 class="media-title">Quick Registration</h3>
+            <p class="media-description">Simple form for registering new students in minutes</p>
+        </div>
+        <div class="media-item">
+            <div class="media-icon">
+                <i class="fas fa-file-import"></i>
+            </div>
+            <h3 class="media-title">Bulk Import</h3>
+            <p class="media-description">Import multiple student records from CSV or Excel files</p>
+        </div>
+        <div class="media-item">
+            <div class="media-icon">
+                <i class="fas fa-id-card"></i>
+            </div>
+            <h3 class="media-title">ID Generation</h3>
+            <p class="media-description">Automatically generate unique student IDs and cards</p>
+        </div>
+        <div class="media-item">
+            <div class="media-icon">
+                <i class="fas fa-bell"></i>
+            </div>
+            <h3 class="media-title">Notifications</h3>
+            <p class="media-description">Send automatic welcome emails and notifications</p>
+        </div>
+    </div>
+    
+    <div class="video-container-alt">
+        <h3 class="section-title"><i class="fas fa-user-graduate"></i> Registration Walkthrough</h3>
+        <p>Complete guide to the student registration process</p>
+        
+        <div class="video-placeholder">
+            <i class="fas fa-user-graduate"></i>
+            <span>Registration Process Guide</span>
+            <p style="font-size: 14px; margin-top: 10px;">Video: Step-by-step registration tutorial</p>
+        </div>
+        
+        <div class="button-group mt-3">
+            <button class="action-btn">
+                <i class="fas fa-info-circle"></i> View Guide
+            </button>
+            <button class="action-btn primary">
+                <i class="fas fa-print"></i> Print Forms
+            </button>
+        </div>
+    </div>
+</section>
+      <!-- Right Sidebar -->
+      <aside class="right-sidebar">
+        <!-- Registration Stats -->
+        <section class="quick-stats">
+          <h2 class="section-title">
+            <i class="fas fa-chart-bar"></i> Registration Statistics
+          </h2>
+          <div class="stats-grid-sidebar">
+            <div class="stat-item-sidebar">
+              <div class="stat-label-sidebar">Total Students</div>
+              <div class="stat-value-sidebar">248</div>
+            </div>
+            <div class="stat-item-sidebar">
+              <div class="stat-label-sidebar">This Month</div>
+              <div class="stat-value-sidebar">15</div>
+            </div>
+            <div class="stat-item-sidebar">
+              <div class="stat-label-sidebar">Active</div>
+              <div class="stat-value-sidebar">235</div>
+            </div>
+            <div class="stat-item-sidebar">
+              <div class="stat-label-sidebar">Pending</div>
+              <div class="stat-value-sidebar">3</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="section-card">
+          <h2 class="section-title">
+            <i class="fas fa-bolt"></i> Quick Actions
+          </h2>
+          <div class="quick-actions-grid">
+            <button class="action-item">
+              <div class="action-icon">
+                <i class="fas fa-print"></i>
+              </div>
+              <div class="action-label">Print Forms</div>
+            </button>
+            <button class="action-item">
+              <div class="action-icon">
+                <i class="fas fa-file-import"></i>
+              </div>
+              <div class="action-label">Import List</div>
+            </button>
+            <button class="action-item">
+              <div class="action-icon">
+                <i class="fas fa-qrcode"></i>
+              </div>
+              <div class="action-label">Generate ID</div>
+            </button>
+            <button class="action-item">
+              <div class="action-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="action-label">Send Welcome</div>
+            </button>
+          </div>
+        </section>
+
+        <!-- Registration Checklist -->
+        <section class="section-card">
+          <h2 class="section-title">
+            <i class="fas fa-clipboard-check"></i> Checklist
+          </h2>
+          <div class="activity-list">
+            <div class="activity-item">
+              <div class="activity-icon present">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="activity-info">
+                <h4>Required Documents</h4>
+                <p>Birth certificate, photos, records</p>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon absent">
+                <i class="fas fa-times-circle"></i>
+              </div>
+              <div class="activity-info">
+                <h4>Medical Records</h4>
+                <p>Immunization records needed</p>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon late">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="activity-info">
+                <h4>Parent Consent</h4>
+                <p>Digital signature required</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/register.js"></script>
+  </body>
+</html>

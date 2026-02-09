@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classroom Management System - Home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/dashboard.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <div class="header-content">
+          <h1><i class="fas fa-tachometer-alt"></i> Dashboard Overview</h1>
+          <p>
+            Welcome back! Here's what's happening with your student records
+            today.
+          </p>
+        </div>
+        <div class="header-actions">
+          <button class="action-btn">
+            <i class="fas fa-sync-alt"></i> Refresh
+          </button>
+          <button class="action-btn">
+            <i class="fas fa-cog"></i> Settings
+          </button>
+        </div>
+      </div>
+
+      <!-- Sidebar Navigation - FIXED LINKS -->
+      <div class="sidebar">
+        <div class="logo">
+          <h2><i class="fas fa-user-graduate"></i> EduManage Pro</h2>
+        </div>
+        <div class="nav-menu">
+          <a href="index.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+          <a href="dashboard.html" class="nav-item active">
+            <i class="fas fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="studentRecordsManagement.html" class="nav-item">
+            <i class="fas fa-users"></i>
+            <span>Students</span>
+            <span class="notification-badge">3</span>
+          </a>
+          <a href="attendance.html" class="nav-item">
+            <i class="fas fa-chart-bar"></i>
+            <span>Attendance</span>
+          </a>
+          <a href="reports.html" class="nav-item">
+            <i class="fas fa-file-alt"></i>
+            <span>Reports</span>
+            <span class="notification-badge">5</span>
+          </a>
+          <a href="register.html" class="nav-item">
+            <i class="fas fa-user-plus"></i>
+            <span>Register</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Welcome Card -->
+        <div class="welcome-card">
+          <div class="welcome-header">
+            <div class="welcome-text">
+              <h2>Good Morning, Sarah! 👋</h2>
+              <p>
+                You have 3 pending tasks and 5 new notifications. Last login:
+                Today, 8:30 AM
+              </p>
+            </div>
+            <div class="date-display">
+              <div class="day">Monday</div>
+              <div class="date">November 27, 2023</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-header">
+              <div class="stat-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="stat-trend trend-up">
+                <i class="fas fa-arrow-up"></i> 12%
+              </div>
+            </div>
+            <div class="stat-value">1,248</div>
+            <div class="stat-label">Total Students</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-header">
+              <div class="stat-icon">
+                <i class="fas fa-user-check"></i>
+              </div>
+              <div class="stat-trend trend-up">
+                <i class="fas fa-arrow-up"></i> 8%
+              </div>
+            </div>
+            <div class="stat-value">1,142</div>
+            <div class="stat-label">Active Students</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-header">
+              <div class="stat-icon">
+                <i class="fas fa-calendar-check"></i>
+              </div>
+              <div class="stat-trend trend-down">
+                <i class="fas fa-arrow-down"></i> 3%
+              </div>
+            </div>
+            <div class="stat-value">94.7%</div>
+            <div class="stat-label">Attendance Rate</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-header">
+              <div class="stat-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="stat-trend trend-up">
+                <i class="fas fa-arrow-up"></i> 15%
+              </div>
+            </div>
+            <div class="stat-value">87.3%</div>
+            <div class="stat-label">Average GPA</div>
+          </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-section">
+          <div class="chart-card">
+            <div class="chart-header">
+              <div class="chart-title">
+                <i class="fas fa-chart-line"></i> Attendance Trend
+              </div>
+              <div class="chart-actions">
+                <button class="period-btn active">Weekly</button>
+                <button class="period-btn">Monthly</button>
+                <button class="period-btn">Yearly</button>
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="attendanceChart"></canvas>
+            </div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-header">
+              <div class="chart-title">
+                <i class="fas fa-chart-pie"></i> Grade Distribution
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="gradeChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Multimedia Section - ADDED FOR ASSIGNMENT REQUIREMENT -->
+        <!-- Multimedia Section - No Images Required -->
+        <section class="multimedia-section">
+          <h2 class="section-title">
+            <i class="fas fa-tachometer-alt"></i> Dashboard Features
+          </h2>
+
+          <div class="media-alternative">
+            <div class="media-item">
+              <div class="media-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3 class="media-title">Real-time Analytics</h3>
+              <p class="media-description">
+                Live updates on student performance and attendance
+              </p>
+            </div>
+            <div class="media-item">
+              <div class="media-icon">
+                <i class="fas fa-bell"></i>
+              </div>
+              <h3 class="media-title">Smart Notifications</h3>
+              <p class="media-description">
+                Get alerts for important events and updates
+              </p>
+            </div>
+            <div class="media-item">
+              <div class="media-icon">
+                <i class="fas fa-cogs"></i>
+              </div>
+              <h3 class="media-title">Customizable Widgets</h3>
+              <p class="media-description">
+                Arrange dashboard widgets to suit your workflow
+              </p>
+            </div>
+            <div class="media-item">
+              <div class="media-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h3 class="media-title">Mobile Dashboard</h3>
+              <p class="media-description">
+                Access dashboard from any device, anywhere
+              </p>
+            </div>
+          </div>
+
+          <div class="video-container-alt">
+            <h3 class="section-title">
+              <i class="fas fa-desktop"></i> Dashboard Overview
+            </h3>
+            <p>Learn how to make the most of your dashboard features</p>
+
+            <div class="video-placeholder">
+              <i class="fas fa-desktop"></i>
+              <span>Dashboard Tutorial</span>
+              <p style="font-size: 14px; margin-top: 10px">
+                Video: Maximizing dashboard efficiency
+              </p>
+            </div>
+
+            <div class="button-group mt-3">
+              <button class="action-btn">
+                <i class="fas fa-play-circle"></i> Play Tutorial
+              </button>
+              <button class="action-btn primary">
+                <i class="fas fa-cog"></i> Customize Dashboard
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Recent Activity -->
+        <div class="activity-card">
+          <div class="chart-header">
+            <div class="chart-title">
+              <i class="fas fa-history"></i> Recent Activity
+            </div>
+            <button
+              class="action-btn"
+              style="padding: 8px 16px; font-size: 14px"
+            >
+              <i class="fas fa-redo"></i> Load More
+            </button>
+          </div>
+          <div class="activity-list">
+            <div class="activity-item">
+              <div class="activity-icon student">
+                <i class="fas fa-user-plus"></i>
+              </div>
+              <div class="activity-info">
+                <h4>New Student Registered</h4>
+                <p><i class="fas fa-user"></i> John Smith - Grade 11</p>
+              </div>
+              <div class="activity-time">10 min ago</div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon attendance">
+                <i class="fas fa-calendar-times"></i>
+              </div>
+              <div class="activity-info">
+                <h4>Attendance Alert</h4>
+                <p>
+                  <i class="fas fa-exclamation-triangle"></i> 5 students absent
+                  in Grade 10-B
+                </p>
+              </div>
+              <div class="activity-time">45 min ago</div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon grade">
+                <i class="fas fa-chart-bar"></i>
+              </div>
+              <div class="activity-info">
+                <h4>Grades Updated</h4>
+                <p><i class="fas fa-book"></i> Math midterm results uploaded</p>
+              </div>
+              <div class="activity-time">2 hours ago</div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon system">
+                <i class="fas fa-bell"></i>
+              </div>
+              <div class="activity-info">
+                <h4>System Notification</h4>
+                <p>
+                  <i class="fas fa-info-circle"></i> New software update
+                  available
+                </p>
+              </div>
+              <div class="activity-time">5 hours ago</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Sidebar -->
+      <div class="right-sidebar">
+        <!-- User Profile -->
+        <div class="profile-card">
+          <div class="profile-header">
+            <div class="profile-avatar">SJ</div>
+            <div class="profile-badge">Teacher</div>
+          </div>
+          <div class="profile-info">
+            <h3>Sarah Johnson</h3>
+            <p>Mathematics Department Head</p>
+            <div class="profile-contact">
+              <i class="fas fa-envelope"></i>
+              sarah@school.edu
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions-card">
+          <div class="chart-title">
+            <i class="fas fa-bolt"></i> Quick Actions
+          </div>
+          <div class="quick-actions-grid">
+            <div class="action-item">
+              <div class="action-icon">
+                <i class="fas fa-user-plus"></i>
+              </div>
+              <div class="action-label">Add Student</div>
+            </div>
+            <div class="action-item">
+              <div class="action-icon">
+                <i class="fas fa-file-import"></i>
+              </div>
+              <div class="action-label">Import Data</div>
+            </div>
+            <div class="action-item">
+              <div class="action-icon">
+                <i class="fas fa-chart-bar"></i>
+              </div>
+              <div class="action-label">Generate Report</div>
+            </div>
+            <div class="action-item">
+              <div class="action-icon">
+                <i class="fas fa-calendar-plus"></i>
+              </div>
+              <div class="action-label">Schedule Event</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming Events -->
+        <div class="events-card">
+          <div class="chart-title">
+            <i class="fas fa-calendar-day"></i> Upcoming Events
+          </div>
+          <div class="events-list">
+            <div class="event-item">
+              <div class="event-date">
+                <div class="day">28</div>
+                <div class="month">Nov</div>
+              </div>
+              <div class="event-info">
+                <h4>Parent-Teacher Meeting</h4>
+                <p>3:00 PM - Main Hall</p>
+              </div>
+            </div>
+            <div class="event-item">
+              <div class="event-date">
+                <div class="day">30</div>
+                <div class="month">Nov</div>
+              </div>
+              <div class="event-info">
+                <h4>Math Competition</h4>
+                <p>All day - Science Wing</p>
+              </div>
+            </div>
+            <div class="event-item">
+              <div class="event-date">
+                <div class="day">02</div>
+                <div class="month">Dec</div>
+              </div>
+              <div class="event-info">
+                <h4>Final Exams Begin</h4>
+                <p>All Grades</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- We'll add this later: <script src="js/script.js"></script> -->
+  </body>
+</html>
